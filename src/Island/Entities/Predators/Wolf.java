@@ -12,35 +12,19 @@ public class Wolf extends Predator {
 
 
 	public Wolf(String name, Cell cell, Object lock){
-		super(name, cell ,lock);
-		weight = 50;
-		speed = 3;
-		maxSatiety = 8;
+		super(name, 50, 3, 8,14, 2, cell, lock);
 	}
 
-	public boolean eat(){
-		int successPercent = 0;
-		List<Animal> animals = currentLocation.getAnimals();
-		for(Animal animal : animals){
-			if(animal instanceof Horse) successPercent = 10;
-			else if(animal instanceof Deer) successPercent = 15;
-			else if(animal instanceof Rabbit) successPercent = 60;
-			else if(animal instanceof Mouse) successPercent = 80;
-			else if(animal instanceof Goat) successPercent = 60;
-			else if(animal instanceof Sheep) successPercent = 70;
-			else if(animal instanceof Boar) successPercent = 15;
-			else if(animal instanceof Buffalo) successPercent = 10;
-			else if(animal instanceof Duck) successPercent = 40;
-
-			if(successPercent != 0){
-				return catchPrey(successPercent,animals,animal);
-			}
-		}
-		return false;
-	}
-
-	@Override
-	public void run(){
-
+	public int getPrey(Animal animal){
+		if(animal instanceof Horse) return 10;
+		else if(animal instanceof Deer) return 15;
+		else if(animal instanceof Rabbit) return 60;
+		else if(animal instanceof Mouse) return 80;
+		else if(animal instanceof Goat) return 60;
+		else if(animal instanceof Sheep) return 70;
+		else if(animal instanceof Boar) return 15;
+		else if(animal instanceof Buffalo) return 10;
+		else if(animal instanceof Duck) return 40;
+		return 0;
 	}
 }

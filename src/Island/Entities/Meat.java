@@ -2,11 +2,11 @@ package Island.Entities;
 
 import Island.Cell;
 
-public class Meat implements Runnable{
+public class Meat implements Entity{
 	public String deadAnimal;
 	public double weight;
 	public int years = 0;
-	public int rotingYears = 3;
+	public int rotingYear = 3;
 	public Cell currentLocation;
 
 	public Meat(Animal animal){
@@ -16,11 +16,10 @@ public class Meat implements Runnable{
 		currentLocation.addMeat(this);
 	}
 
-	@Override
-	public void run(){
-		if(rotingYears == years){
+	public void gettingRot(){
+		if(rotingYear <= years){
 			currentLocation.removeMeat(this);
-		}
-		years++;
+			System.out.println(deadAnimal + "'s meat has rotten!");
+		}else years++;
 	}
 }

@@ -1,8 +1,7 @@
 package Island;
 
 import Island.Entities.Animal;
-import Island.Entities.Herbivorous.Horse;
-import Island.Entities.Herbivorous.Worm;
+import Island.Entities.Herbivorous.*;
 import Island.Entities.Predators.Bear;
 
 import java.util.Scanner;
@@ -63,40 +62,49 @@ public class Island {
 //		new Bear("Mishanya", battleRoyalIsland.cells[0][0], battleRoyalIsland.myLock);
 //		new Bear("Mishanya", battleRoyalIsland.cells[0][0], battleRoyalIsland.myLock);
 //		new Bear("Mishanya", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
-		new Bear("Mishanya", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
-		new Bear("Mishanya", battleRoyalIsland.cells[2][2], battleRoyalIsland.myLock);
-		new Bear("Mishanya", battleRoyalIsland.cells[2][2], battleRoyalIsland.myLock);
+//		new Bear("Mishanya", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Bear("Mishanya", battleRoyalIsland.cells[2][2], battleRoyalIsland.myLock);
+//		new Bear("Mishanya", battleRoyalIsland.cells[2][2], battleRoyalIsland.myLock);
 
-		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
-		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
-		new Horse("Horse", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Horse("Horse", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
-		new Horse("Horse", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Worm("Wormix", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+
+//		new Horse("MyLittlePony", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Horse("MyLittlePony", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Horse("MyLittlePony", battleRoyalIsland.cells[1][1], battleRoyalIsland.myLock);
+//		new Duck("DonaldDuck", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Duck("DonaldDuck", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+//		new Duck("DonaldDuck", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Duck("DonaldDuck", battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
 
 		battleRoyalIsland.executor = Executors.newScheduledThreadPool(10);
 		LifeCycleThread lifeCycleThread = new LifeCycleThread("life", battleRoyalIsland, battleRoyalIsland.myLock);
 		battleRoyalIsland.executor.scheduleAtFixedRate(lifeCycleThread, 0, 3, TimeUnit.SECONDS);
 
-//			try{
-//				while(RUNNING){
-//					Thread.sleep(1000);
-//				}
-//			} catch(InterruptedException e){
-//				e.printStackTrace();
-//			}
-
-		//TODO add plants(autoGrowing, maxCount)
+		//TODO add vegetation(autoGrowing, maxCount) +
 		//TODO [DONE] add maxCount of moves
 		//TODO [DONE] add death by maxAge
-		//TODO add death animals (meat) +
+		//TODO [DONE] add death animals (meat)
+			//TODO [DONE] add display for meat
+			//TODO [DONE] add meat eating without hunting
+		//TODO [DONE] add death from starving
+			//TODO [DONE] overwrite all animals super constructor
 		//TODO [DONE] add max animals on one cell
 		//TODO [DONE] add javaFX (console output)
-		//TODO [DONE]set random spawner
-		//TODO realise cell maxCapacity
+		//TODO [DONE] set random spawner
+		//TODO [DONE] realise cell maxCapacity
+
+
 
 	}
 
