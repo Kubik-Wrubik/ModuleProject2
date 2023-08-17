@@ -9,35 +9,34 @@ import java.util.List;
 
 public class Boar extends Herbivorous implements CanHunt {
 	public Boar(String name, Cell cell, Object lock){
-		super(name, 400, 2, 50,15, 2, cell, lock);
+		super(name, 400, 2, 50, 15, 2, cell, lock);
 	}
 
-//	@Override
-//	public boolean searchFood(){
-//		int successPercent = 0;
-//		List<Animal> animals = currentLocation.getAnimals();
-//		for(Animal animal: animals){
-//			if(animal instanceof Mouse) successPercent = 50;
-//			if(animal instanceof Worm) successPercent = 90;
-//
-//			if(successPercent != 0){
-//				if (catchPrey(this, successPercent,animal)) return true;
-//				break;
-//			}
-//		}
-//
-//		List<Vegetation> plants = currentLocation.getVegetation();
-//		return eatPlant(plants);
-//	}
-
-
-
 	@Override
-	public void run(){
+	public boolean searchFood(){
+		if(eatRandomMeat(this)) return true;
+
+		List<Animal> animals = currentLocation.getAnimals();
+		for(Animal animal : animals){
+			int successPercent = getPrey(animal);
+			if(successPercent != 0){
+				return catchPrey(this, successPercent, animal);
+			}
+		}
+
+		Vegetation vegetation = currentLocation.getVegetation();
+		if(vegetation.currentPlants > 0){
+			graze(this, vegetation);
+			return true;
+		}
+
+		return false;
 	}
 
 	@Override
 	public int getPrey(Animal animal){
+		if(animal instanceof Worm) return 90;
+		if(animal instanceof Mouse) return 50;
 		return 0;
 	}
 }

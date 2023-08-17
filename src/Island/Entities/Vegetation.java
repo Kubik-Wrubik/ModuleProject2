@@ -1,26 +1,26 @@
 package Island.Entities;
 
-import Island.Cell;
+/**
+ * <code>MAX_PLANTS</code> limits maximum plants amount
+ * <p><code>growValue</code> is final and increase plants amount every cycle
+ * <p><code>currentPlants</code> contains double plants amount
+ */
+public class Vegetation implements Entity {
+	private final static double MAX_PLANTS = 200;
+	private final int growValue;
+	public double currentPlants;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-public class Vegetation implements Entity{
-	private static final int MAX_PLANTS = 200;
-	public AtomicInteger currentPlants;
-	int growValue;
-	public Cell currentLocation;
-
-
-	public Vegetation(int initialValue, int growValue, Cell location){
-		this.currentPlants = new AtomicInteger(initialValue);
+	/**
+	 *
+	 * @param initialValue is an initial value
+	 * @param growValue is a growing value
+	 */
+	public Vegetation(double initialValue, int growValue){
+		this.currentPlants = initialValue;
 		this.growValue = growValue;
-		currentLocation = location;
-//		currentLocation.setVegetation(this);
 	}
 
 	public void grow(){
-		if(currentPlants.addAndGet(growValue) > MAX_PLANTS){
-			currentPlants.set(MAX_PLANTS);
-		}
+		if((currentPlants += growValue) > MAX_PLANTS) currentPlants = MAX_PLANTS;
 	}
 }

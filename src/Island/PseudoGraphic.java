@@ -1,13 +1,18 @@
 package Island;
 
-import Island.Entities.Animal;
 import Island.Entities.Entity;
 import Island.Entities.Herbivorous.*;
 import Island.Entities.Meat;
 import Island.Entities.Predators.*;
 import Island.Entities.Vegetation;
 
+/**
+ * Class for representation entities as a one character
+ */
 public class PseudoGraphic {
+	/**
+	 * Transform the {@link Entity} into a unicode character
+	 */
 	public static String iconTransform(Entity entity){
 		if(entity instanceof Meat) return "\uD83E\uDD69";
 		if(entity instanceof Vegetation) return "\uD83C\uDF31";
