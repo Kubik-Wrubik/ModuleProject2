@@ -45,13 +45,13 @@ public class Island {
 	 */
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("set island length: ");
+		System.out.print("set island length(~5): ");
 		 int length = scanner.nextInt();
 
-		System.out.print("set island width: ");
+		System.out.print("set island width(~5): ");
 		 int width = scanner.nextInt();
 
-		System.out.print("set max animals at one cell: ");
+		System.out.print("set max animals at one cell(~5): ");
 		 int capacity = scanner.nextInt();
 
 		Island battleRoyalIsland = new Island(length, width, capacity);
