@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Duck extends Herbivorous implements CanHunt {
+	public final String icon = "\uD83E\uDD86";
 	private final int chanceToGetWorm = 90;
 	private final Map<Class<? extends Animal>, Integer> preys = new HashMap<>(){{
 		put(Worm.class, chanceToGetWorm);
@@ -46,5 +47,10 @@ public class Duck extends Herbivorous implements CanHunt {
 		if(preys.containsKey(preyClass))
 			return preys.get(preyClass);
 		return 0;
+	}
+
+	@Override
+	public String getIcon(){
+		return icon;
 	}
 }

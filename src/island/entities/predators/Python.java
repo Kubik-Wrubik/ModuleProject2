@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Python extends Predator {
+	public final String icon = "\uD83D\uDC0D";
 	private final int chanceToGetFox = 15;
 	private final int chanceToGetRabbit = 20;
 	private final int chanceToGetMouse = 40;
@@ -18,5 +19,10 @@ public class Python extends Predator {
 		preys.put(Rabbit.class, chanceToGetRabbit);
 		preys.put(Mouse.class, chanceToGetMouse);
 		preys.put(Duck.class, chanceToGetDuck);
+	}
+
+	@Override
+	public String getIcon(){
+		return icon;
 	}
 }

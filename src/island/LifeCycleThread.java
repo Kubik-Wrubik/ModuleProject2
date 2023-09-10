@@ -93,8 +93,8 @@ public class LifeCycleThread extends Thread {
 				StringBuilder builder = new StringBuilder("[");
 				for(Animal animal : island.cells[i][j].getAnimals()){
 					if(animal.getAge() < animal.getBreedAbleAge())
-						builder.append(String.format("{%s}",PseudoGraphic.iconTransform(animal)));
-					else builder.append(PseudoGraphic.iconTransform(animal));
+						builder.append(String.format("{%s}", animal.getIcon()));
+					else builder.append(animal.getIcon());
 					animalCount++;
 				}
 

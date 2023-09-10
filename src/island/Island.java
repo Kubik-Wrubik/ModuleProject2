@@ -1,9 +1,8 @@
 package island;
 
 import island.entities.Animal;
-import island.entities.herbivorous.Sheep;
-import island.entities.predators.Bear;
-import island.entities.predators.Python;
+import island.entities.herbivorous.*;
+import island.entities.predators.*;
 
 import java.util.Scanner;
 import java.util.concurrent.Executors;
@@ -59,29 +58,25 @@ public class Island {
 
 		ThreadLocalRandom rand = ThreadLocalRandom.current();
 
-//		new Bear( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Bear( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Bear(battleRoyalIsland.cells[0][0], battleRoyalIsland.myLock);
-//
-//		new Eagle( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Eagle( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//
-//		new Fox(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Fox(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//
-//		new Python(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Python(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-		new Sheep(battleRoyalIsland.cells[0][0], battleRoyalIsland.myLock);
-		new Python(battleRoyalIsland.cells[0][0], battleRoyalIsland.myLock);
+		new Bear( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Bear( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
 
-//		new Horse( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Horse( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//
-//		new Worm( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Worm(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//
-//		new Duck( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
-//		new Duck( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Eagle( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Eagle( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+
+		new Fox(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Fox(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+
+		new Python(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Python(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Horse( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Horse( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+
+		new Worm( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Worm(battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+
+		new Duck( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
+		new Duck( battleRoyalIsland.cells[rand.nextInt(length)][rand.nextInt(width)], battleRoyalIsland.myLock);
 
 		int sleepBetweenAnimalMethodCycles = 500;
 		int sleepBetweenLifeCycles = 3;

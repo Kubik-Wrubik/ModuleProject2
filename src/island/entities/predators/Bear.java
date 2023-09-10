@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Bear extends Predator {
+	public final String icon = "\uD83D\uDC3B";
 	private final int chanceToGetPython = 80;
 	private final int chanceToGetHorse = 40;
 	private final int chanceToGetDeer = 80;
@@ -31,5 +32,10 @@ public class Bear extends Predator {
 		preys.put(Boar.class, chanceToGetBoar);
 		preys.put(Buffalo.class, chanceToGetBuffalo);
 		preys.put(Duck.class, chanceToGetDuck);
+	}
+
+	@Override
+	public String getIcon(){
+		return icon;
 	}
 }

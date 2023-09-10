@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class Animal implements Runnable{
 	private static final AtomicInteger animalID = new AtomicInteger(1);
+	public String icon;
 	protected final Object lock;
 	private final String name;
 	private final double weight;
@@ -116,6 +117,10 @@ public abstract class Animal implements Runnable{
 		return currentLocation;
 	}
 
+	public String getIcon(){
+		return icon;
+	}
+
 	/**
 	 * method selects two animals and creates a new animal
 	 */
@@ -128,8 +133,8 @@ public abstract class Animal implements Runnable{
 					animal.hasBred = true;
 					Animal newAnimal;
 					try{
-						Constructor<?> constructor = this.getClass().getConstructor(String.class, Cell.class, Object.class);
-						newAnimal = (Animal) constructor.newInstance( this.getClass().getSimpleName(), currentLocation, lock);
+						Constructor<?> constructor = this.getClass().getConstructor(Cell.class, Object.class);
+						newAnimal = (Animal) constructor.newInstance(currentLocation, lock);
 						System.out.printf("%s + %s = %s\n", this.name, animal.name, newAnimal.name);
 					} catch(NoSuchMethodException|InstantiationException|IllegalAccessException|InvocationTargetException e){
 						e.printStackTrace();
